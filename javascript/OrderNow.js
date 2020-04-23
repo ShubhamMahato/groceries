@@ -34,12 +34,7 @@ $(function () {
       ],
       minLength: 1,
       select: function (event, ui) {
-        /*
-     var url = ui.item.id;
-     if(url != '') {
-       location.href = '...' + url;
-     }
-     */
+        myFunction(ui.item.value);
       },
       html: true,
       open: function (event, ui) {
@@ -48,7 +43,7 @@ $(function () {
     })
     .autocomplete("instance")._renderItem = function (ul, item) {
     return $(
-      "<li class='list-group-item d-flex justify-content-between align-items-center'><div id='searchitem'><img id='searchimg' src='" +
+      "<li id='mysearchlist' class='list-group-item d-flex justify-content-between align-items-center'><div id='searchitem'><img id='searchimg' src='" +
         item.img +
         "'><span style='padding:20px'>" +
         item.value +
@@ -91,11 +86,10 @@ var source = [
   },
 ];
 
-function myFunction() {
+function myFunction(searchVal) {
   var results = [];
   var price = 0;
   var searchField = "value";
-  var searchVal = document.getElementById("auto_search").value;
   if (searchVal == "" || searchVal.length == 0) {
     alert("Please! Enter value!!");
   } else {
@@ -103,6 +97,8 @@ function myFunction() {
       if (source[i][searchField] == searchVal) {
         results.push(source[i]);
       }
+    }
+    if (showTableData(searchVal) == "true") {
     }
     $("#productTable tbody").append(
       "<tr>" +
@@ -114,6 +110,9 @@ function myFunction() {
         "</td>" +
         "<td  class='countable'>" +
         getFields(results, "price") +
+        "</td>" +
+        "<td  id='quantityvalue'>" +
+        1 +
         "</td>" +
         "<td><button onclick='deleteRow();addfunction()' class='btn btn-danger'>Delete</button></td>" +
         "</tr>"
@@ -129,6 +128,7 @@ function myFunction() {
     }
     document.getElementById("pricetag").innerHTML = sum;
   }
+  document.getElementById("auto_search").innerHTML = "";
 }
 
 function getFields(source, value) {
@@ -170,3 +170,41 @@ function addfunction() {
     document.getElementById("pricetag").innerHTML = sum;
   });
 }
+function showTableData(searchVal) {
+  var myTab = document.getElementById("productTable");
+
+  // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+  for (i = 1; i < myTab.rows.length; i++) {
+    // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+    var objCells = myTab.rows.item(i).cells;
+
+    // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+    // for (var j = 3; j < objCells.length - 1; j++) {
+    //   console.log(objCells.item(j).innerHTML);
+    // }
+    for (var j = 1; j < objCells.length - 3; j++) {
+      if (objCells.item(j).innerHTML == searchVal) {
+        return "true";
+      } else {
+        return "false";
+      }
+    }
+  }
+}
+
+// function showTableData(searchVal) {
+//   var myTab = document.getElementById("productTable");
+
+//   // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+//   for (i = 1; i < myTab.rows.length; i++) {
+//     // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+//     var objCells = myTab.rows.item(i).cells;
+
+//     for (var j = 3; j < objCells.length - 1; j++)  {
+//       if(objCells.item(j).innerHTML==searchVal){
+
+
+//       }
+//     }
+//   }
+// }
