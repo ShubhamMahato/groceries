@@ -1,0 +1,26 @@
+.navbar {
+  background-color: aqua;
+}
+.nav-item {
+  margin-left: 20px;
+}
+#searchitem {
+  width: 300px;
+}
+#searchimg {
+  width: 70px;
+  height: 70px;
+}
+td img {
+  width: 100px;
+  height: 100px;
+}
+.container {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  #productTable {
+    margin-top: 20px;
+  }
+}
