@@ -5,36 +5,42 @@ $(function () {
       source: [
         {
           id: 1,
-          value: "Ghee",
+          value: "Mango",
           img:
-            "https://images-na.ssl-images-amazon.com/images/I/91kSCdljC%2BL._SX569_.jpg",
+            "https://devgadmango.com/wp-content/uploads/2019/11/chemical-mango.png",
+          suffix: "/kg",
           price: "600",
         },
         {
           id: 2,
-          value: "Atta",
+          value: "Banana",
           img:
-            "https://5.imimg.com/data5/MO/VY/MY-26606518/ashirwad-wheat-flour-500x500.jpg",
+            "https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG-320-80.jpg",
+          suffix: "/dozen",
           price: "50",
         },
         {
           id: 3,
-          value: "Daal",
+          value: "Watermelon",
           img:
-            "https://images-na.ssl-images-amazon.com/images/I/91%2B85gJpshL._SL1500_.jpg",
-          price: "150",
+            "https://lh3.googleusercontent.com/proxy/_sqm7i9aUKzszXgkJHMi_MJ45_EGr9PnD453OhaEWTz_gToMUiYnb9OYxEIYOd9w_YQllZ_mT1GUYs9V2XWOx8pwpD6sKaLC0AJdA6Dw62-988blAi5DNE6pquIOjtE",
+          suffix: "/kg",
+          price: "50",
         },
         {
           id: 4,
-          value: "Maggie",
+          value: "Melon",
           img:
-            "https://images-na.ssl-images-amazon.com/images/I/81WyWDbuqsL._SX569_.jpg",
+            "https://lh3.googleusercontent.com/proxy/dWy8-V_iFiSwrfZEAreuYygUnipfGre559Lt9CFF_FQFS9yPRbgg8BwHmZMKhlcHCcp5Q1swwMfV5n8AG0w6LzuT94V0tJzr7VxA1qdzFvpXOaeJO2d7wVhM0Lp_YJJVhmJCsXlACWOvsCiTzWY",
+          suffix: "/kg",
           price: "80",
         },
       ],
       minLength: 1,
       select: function (event, ui) {
         myFunction(ui.item.value);
+        $("#auto_search").val("");
+        event.preventDefault();
       },
       html: true,
       open: function (event, ui) {
@@ -43,12 +49,13 @@ $(function () {
     })
     .autocomplete("instance")._renderItem = function (ul, item) {
     return $(
-      "<li id='mysearchlist' class='list-group-item d-flex justify-content-between align-items-center'><div id='searchitem'><img id='searchimg' src='" +
+      "<li id='mysearchlist'  class='list-group-item'><div id='searchitem'><img id='searchimg' src='" +
         item.img +
         "'><span style='padding:20px'>" +
         item.value +
         "</span><span style='padding:20px'>" +
         item.price +
+        item.suffix +
         "</span></div></li>"
     ).appendTo(ul);
     //return $("<ul class='list-group'><li class='list-group-item d-flex justify-content-between align-items-center'> "+item.value+"'<span class='badge badge-primary badge-pill'>"+item.value+"</span></li></ul>").appendTo( ul );
@@ -58,30 +65,33 @@ $(function () {
 var source = [
   {
     id: 1,
-    value: "Ghee",
+    value: "Mango",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/91kSCdljC%2BL._SX569_.jpg",
+      "https://devgadmango.com/wp-content/uploads/2019/11/chemical-mango.png",
+    suffix: "/kg",
     price: "600",
   },
   {
     id: 2,
-    value: "Atta",
-    img:
-      "https://5.imimg.com/data5/MO/VY/MY-26606518/ashirwad-wheat-flour-500x500.jpg",
+    value: "Banana",
+    img: "https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG-320-80.jpg",
+    suffix: "/dozen",
     price: "50",
   },
   {
     id: 3,
-    value: "Daal",
+    value: "Watermelon",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/91%2B85gJpshL._SL1500_.jpg",
-    price: "150",
+      "https://lh3.googleusercontent.com/proxy/_sqm7i9aUKzszXgkJHMi_MJ45_EGr9PnD453OhaEWTz_gToMUiYnb9OYxEIYOd9w_YQllZ_mT1GUYs9V2XWOx8pwpD6sKaLC0AJdA6Dw62-988blAi5DNE6pquIOjtE",
+    suffix: "/kg",
+    price: "50",
   },
   {
     id: 4,
-    value: "Maggie",
+    value: "Melon",
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/81WyWDbuqsL._SX569_.jpg",
+      "https://lh3.googleusercontent.com/proxy/dWy8-V_iFiSwrfZEAreuYygUnipfGre559Lt9CFF_FQFS9yPRbgg8BwHmZMKhlcHCcp5Q1swwMfV5n8AG0w6LzuT94V0tJzr7VxA1qdzFvpXOaeJO2d7wVhM0Lp_YJJVhmJCsXlACWOvsCiTzWY",
+    suffix: "/kg",
     price: "80",
   },
 ];
@@ -111,9 +121,7 @@ function myFunction(searchVal) {
         "<td  class='countable'>" +
         getFields(results, "price") +
         "</td>" +
-        "<td  id='quantityvalue'>" +
-        1 +
-        "</td>" +
+        "<td  id='quantityvalue'><select id='quantity'><option value='1'>1 Kg</option> <option value='2'>2 Kg</option><option value='3'>3 Kg</option><option value='4'>4 Kg</option><option value='5'>5 Kg</option></select></td>" +
         "<td><button onclick='deleteRow();addfunction()' class='btn btn-danger'>Delete</button></td>" +
         "</tr>"
     );
@@ -141,11 +149,11 @@ function deleteRow() {
   var index,
     table = document.getElementById("productTable");
   for (var i = 1; i < table.rows.length; i++) {
-    table.rows[i].cells[3].onclick = function () {
+    table.rows[i].cells[4].onclick = function () {
       index = this.parentElement.rowIndex;
       table.deleteRow(index);
 
-      //console.log(index);
+      console.log(index);
     };
   }
 }
@@ -202,7 +210,6 @@ function showTableData(searchVal) {
 
 //     for (var j = 3; j < objCells.length - 1; j++)  {
 //       if(objCells.item(j).innerHTML==searchVal){
-
 
 //       }
 //     }
