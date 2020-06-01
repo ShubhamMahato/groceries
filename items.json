@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "value": "Ghee",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91kSCdljC%2BL._SX569_.jpg",
+        "price": "600"
+    },
+    {
+        "id": 2,
+        "value": "Atta",
+        "img": "https://5.imimg.com/data5/MO/VY/MY-26606518/ashirwad-wheat-flour-500x500.jpg",
+        "price": "50"
+    },
+    {
+        "id": 3,
+        "value": "Daal",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/91%2B85gJpshL._SL1500_.jpg",
+        "price": "150"
+    },
+    {
+        "id": 4,
+        "value": "Maggie",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81WyWDbuqsL._SX569_.jpg",
+        "price": "80"
+    },
+    {
+        "id": 5,
+        "value": "Besan",
+        "img": "https://4.imimg.com/data4/KQ/NY/MY-34656254/besan-gram-flour-500x500.jpg",
+        "price": "60"
+    }
+]
