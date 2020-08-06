@@ -1,0 +1,37 @@
+[{
+		"id": 1,
+		"value": "T shirt",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2471500/2018/2/9/11518159758071-FIDO-DIDO-Men-Tshirts-9591518159757862-1.jpg",
+		"price": "600"
+	},
+	{
+		"id": 2,
+		"value": "Shirt",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1364628/2016/8/31/11472636737718-Roadster-Men-Blue-Regular-Fit-Printed-Casual-Shirt-6121472636737160-1.jpg",
+		"price": "50"
+	},
+	{
+		"id": 3,
+		"value": "Formal Shirt",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11534912/2020/2/29/bf7805e0-63b6-4651-ad08-3045d6148cb21582962313178-Louis-Philippe-Men-Shirts-4571582962311222-1.jpg",
+		"price": "150"
+	},
+	{
+		"id": 4,
+		"value": "Sweat Shirt",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11678940/2020/3/11/774b7393-cf4a-4d65-9b86-370a6d8b2ef31583928174983HMMenBlueHoodedTop1.jpg",
+		"price": "80"
+	},
+	{
+		"id": 5,
+		"value": "Jacket",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1868217/2018/12/3/1cefb3f5-71ca-417c-a918-1487108543fd1543820389870-HRX-by-Hrithik-Roshan-Men-Navy-Blue-Solid-Sporty-Jacket-5321543820388702-1.jpg",
+		"price": "60"
+	},
+	{
+		"id": 6,
+		"value": "Suit",
+		"img": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8895361/2019/3/6/9b7911d7-b8ae-4d53-ad48-79cd90ff50f51551852044619-Louis-Philippe-Grey-Single-Breasted-Slim-Fit-Formal-Blazer-1-1.jpg",
+		"price": "50"
+	}
+]
